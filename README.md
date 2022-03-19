@@ -1,2 +1,5 @@
 # data-mining-2022
-repository of data-mining-2022 project
+
+Hasta el momento: datos trial/test
+Esperando: datos train(us) con crawler
+Pendiente: datos train(es) con crawler
