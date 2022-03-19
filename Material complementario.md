@@ -1,11 +1,11 @@
-#Papers
+# Papers
 * SemEval 2018 Task 2: Multilingual Emoji Prediction https://iris.unito.it/retrieve/handle/2318/1682124/453356/S18-1003.pdf
 * Tübingen-Oslo at SemEval-2018 Task 2: SVMs perform better than RNNs at Emoji Prediction https://aclanthology.org/S18-1004.pdf
 
-#Data
+# Data
 * SemEval 2018 Task 2: Multilingual Emoji Prediction https://competitions.codalab.org/competitions/17344#learn_the_details-data
 
-#Posibles preguntas
+# Posibles preguntas
 1. Permite hacer un analisis multilingual de texto con emojis
 2. Data etiquetada
 3. Cada texto viene asociado con un emoji, ver palabras claves
