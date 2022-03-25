@@ -31,3 +31,7 @@
 - Hacer -> todos
 - Edición (talvez)
 - Diapositivas -> Gianluca, Mati, Jose
+
+## Comentarios
+
+- Datos train: Deben descargar desde [este link](https://drive.google.com/file/d/11Q6Y4cYKuWd8mys90l_50JYeWQo0nd81/view?usp=sharing) dataframes (df) de train en us y es. Luego, crear una carpeta Train con ambos df.
