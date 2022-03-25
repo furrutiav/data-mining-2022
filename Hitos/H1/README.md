@@ -3,7 +3,7 @@
 - [x] Crawlear train
 - [x] Pasa de Json a .txt
 - [ ] Github hacer cuentas **urgente** (Mati, Jose, Gianluca)
-- [x] Hacer un tabla (incluyendo emjis-texto de todos los set) **- en proceso** (Felipe)
+- [x] Hacer un tabla (incluyendo emjis-texto de todos los set) (Felipe)
 - [ ] Hacer la exploración de datos **- en proceso** (Gianluca, Mati, Jose)
 - [ ] Hacer las preguntas (todos)
 - [ ] Terminar el notebook (Camilo)
