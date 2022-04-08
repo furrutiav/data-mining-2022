@@ -15,16 +15,15 @@
 - 
 - 
 
-## Eploración de datos
+### Ideas exploración
 
-- medidas de tendencia central para la frecuencia de los emoji (con dispersión)
-- medidas de tendencia central para tweet length
-- cuantiles para lo anterior
-- graficar la frecuencia de emojis en los 3 sets
-- graficar cuantiles de longitud
-- frecuencia de palabras, con cuantiles. pre y post stemming
-- covarianza y/o tablas de contingencia, entre palabras y emojis
-- comparar frecuencias con el paper
+- [x] medidas de tendencia central para la frecuencia de los emoji (con dispersión)
+- [ ] medidas de tendencia central para tweet length
+- [x] graficar largo de los tweets
+- [ ] cuantiles para lo anterior
+- [x] graficar la frecuencia de emojis en los 3 sets
+- [ ] frecuencia de palabras (por emoji), con cuantiles. pre y post stemming
+- [ ] covarianza y/o tablas de contingencia, entre palabras y emojis
 
 ## Video
 
