@@ -1,35 +1,32 @@
 # Organización hito 1
 
+Entregado el 13 de Abril a las 10:48 hrs.
+
 - [x] Crawlear train
 - [x] Pasa de Json a .txt
-- [x] Github hacer cuentas **urgente** (Mati, Jose, Gianluca)
+- [x] Github hacer cuentas (Mati, Jose, Gianluca)
 - [x] Hacer un tabla (incluyendo emjis-texto de todos los set) (Felipe)
-- [ ] Hacer la exploración de datos **- en proceso** (Gianluca, Mati, Jose)
-- [ ] Hacer las preguntas (todos)
-- [ ] Terminar el notebook (Camilo)
-- [ ] Hacer el video (todos)
+- [x] Hacer la exploración de datos (Gianluca, Mati, Jose)
+- [x] Hacer las preguntas (todos)
+- [x] Terminar el notebook (Camilo)
+- [x] Hacer el video (todos)
 
 
 ## Preguntas
-(traspasar al notebook)
-- 
-- 
+Traspasadas al Notebook
 
 ### Ideas exploración
 
 - [x] medidas de tendencia central para la frecuencia de los emoji (con dispersión)
-- [ ] medidas de tendencia central para tweet length
+- [x] medidas de tendencia central para tweet length
 - [x] graficar largo de los tweets
-- [ ] cuantiles para lo anterior
 - [x] graficar la frecuencia de emojis en los 3 sets
-- [ ] frecuencia de palabras (por emoji), con cuantiles. pre y post stemming
-- [ ] covarianza y/o tablas de contingencia, entre palabras y emojis
+- [x] frecuencia de palabras (por emoji), con cuantiles. pre y post stemming
+- [x] covarianza y/o tablas de contingencia, entre palabras y emojis
 
 ## Video
 
-- Hacer -> todos
-- Edición (talvez)
-- Diapositivas -> Gianluca, Mati, Jose
+[Link al video](https://youtu.be/SBHs3-6_1e4)
 
 ## Comentarios
 
