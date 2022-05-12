@@ -2,7 +2,7 @@
 
 ## Cosas por hacer
 
-- [ ] **Pre-procesamiento en español**
+- [x] **Pre-procesamiento en español**
 - [ ] Propuestas metodológicas (cada uno una pregunta)
 - [x] **Implementar un clasificador simple (preliminar)**
 
