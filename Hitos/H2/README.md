@@ -2,8 +2,13 @@
 
 ## Cosas por hacer
 
-- [ ] **Pre-procesamiento en español** -> Matías, Jose
+- [ ] **Pre-procesamiento en español**
 - [ ] Propuestas metodológicas (cada uno una pregunta)
-- [ ] **Implementar un clasificador simple (preliminar)**-> el resto
+- [x] **Implementar un clasificador simple (preliminar)**
+
+**Clasificador** (subtareas):
+- [x] Arreglar mapeo índice - emoji
+- [ ] Filtrar palabras muy poco frecuentes
+- [ ] Ajustar parámetro alpha (?)
 
 Reunión viernes 13, 12pm.
