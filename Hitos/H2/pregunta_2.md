@@ -22,11 +22,13 @@ Entre los algoritmos a explorar estan: k-means, aglomerativo, gaussian mixtures,
 
 ## Propuesta metodológica
 
+En lo que sigue se detallara la propuesta metodológica ilustrada en la **Figura 1.**
+
 **Figura 1.** *Diagrama de trabajo para analisis de clustering*
 
 <img src="https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H2/p2_clustering.png" alt="drawing" width="600"/>
 
-En lo que sigue se detallara la propuesta metodológica ilustrada en la **Figura 1.** Primero, nuestro conjunto de datos esta separado por idioma (Ingles y Español) y por particion de ajuste (Entrenamiento/Evaluacion/Prueba). Cada dato consiste en un tweet junto a su etiqueta (indice asociado al emoji). Ahora bien, para utilizar algoritmos de clustering es necesario representar vectorialmente cada tweet. Para esto, consideramos cinco metodos. Tres de estos sirve tanto para Ingles como para Español. Estos son: bag-of-word, tf-idf y word2vec. Luego, para Español consideramos BETO (BERT entrenados con un corpus en español). Mientras que para Ingles, consideramos BERTweet (version de BERT pero entrenado con tweets en ingles). Ver **Tabla 1.** para mas detalles de estos metodos. Brevemente, los primeros dos metodos siguen la forma tradicional de representacion de texto. Mientras que los demas, siguen el paradigma de apredinzaje de representaciones. Estas representaciones provienen de redes neuronales. Las inspiradas en BERT, siguen el paradigma de aprendizaje profundo.
+Primero, nuestro conjunto de datos esta separado por idioma (Ingles y Español) y por particion de ajuste (Entrenamiento/Evaluacion/Prueba). Cada dato consiste en un tweet junto a su etiqueta (indice asociado al emoji). Ahora bien, para utilizar algoritmos de clustering es necesario representar vectorialmente cada tweet. Para esto, consideramos cinco metodos. Tres de estos sirve tanto para Ingles como para Español. Estos son: bag-of-word, tf-idf y word2vec. Luego, para Español consideramos BETO (BERT entrenados con un corpus en español). Mientras que para Ingles, consideramos BERTweet (version de BERT pero entrenado con tweets en ingles). Ver **Tabla 1.** para mas detalles de estos metodos. Brevemente, los primeros dos metodos siguen la forma tradicional de representacion de texto. Mientras que los demas, siguen el paradigma de aprendizaje de representaciones. Estas representaciones provienen de capa especificas en redes neuronales. Por otro lado, aquellos inspirados en BERT, siguen el paradigma de aprendizaje profundo.
 
 **Tabla 1.** *Representación del tweet*
 
@@ -38,7 +40,7 @@ En lo que sigue se detallara la propuesta metodológica ilustrada en la **Figura
 |       BETO        | [BETO: Spanish BERT](https://github.com/dccuchile/beto)                                                                     |       |   X   | [huggingface](https://huggingface.co/dccuchile/bert-base-spanish-wwm-cased)                                |
 |       BERTweet    | [BERTweet: A pre-trained language model for English Tweets](https://aclanthology.org/2020.emnlp-demos.2/)                   |  X    |       | [huggingface](https://huggingface.co/vinai/bertweet-base)                                                  |
 
-Luego de representar cada tweet como un vector con alguno de los metodos propuestas, consideramos cinco algoritmos distintos de clustering. Estos son: k-means, Jerarquico aglomerativo, dbscan, optics y Mixturas Gaussianas.
+Luego de representar cada tweet como un vector con alguno de los metodos propuestos, consideramos cinco algoritmos distintos para agrupar los datos en clusters. Estos son: k-means, Jerarquico aglomerativo, dbscan, optics y Mixturas Gaussianas. Ver **Tabla 2.** para mas detalle. La idea es encontrar entre estos el mas apropiado para nuestra tarea principal (predecir el emoji). Es decir, aquel que mejor agrupe aquellos tweets asociados a un mismo emoji y, al mismo tiempo, diferencia aquellos tweets asociado a un emoji diferente. Para medir esto finalizamos un con una evaluacion y visualizacion de clusterging.
 
 **Tabla 2.** *Algoritmos de clustering*
 
@@ -50,6 +52,7 @@ Luego de representar cada tweet como un vector con alguno de los metodos propues
 | OPTICS            | [Ordering points to identify the clustering structure](https://en.wikipedia.org/wiki/OPTICS_algorithm)      | [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.OPTICS.html#sklearn.cluster.OPTICS) |
 | GM  | [Gaussian Mixture](https://en.wikipedia.org/wiki/Mixture_model#Gaussian_mixture_model)  | [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html#sklearn.mixture.GaussianMixture) |
 
+Para evaluar cuantitativamente el clustering, consideramos siete metricas. Algunas de estas son independientes del metodo, mientras que otras no son validas para ciertos metodos de clustering. Ver **Tabla 3.** para mas detalle.
 
 **Tabla 3.** *Métricas de evaluación para clustering*
 
@@ -62,6 +65,8 @@ Luego de representar cada tweet como un vector con alguno de los metodos propues
 |                   | Purity                 |   X    |     |        |        |    |           |
 |                   | Entropy                |   X    |     |        |        |    |           |
 
+Ahora bien, para evaluar cualitativamente el clustering, se visualizaran los clusters obtenidos. Sin embargo, como los vectores viven en espacios de dimensiones mayores que dos, es necesario reducir la dimensionalidad de los vectores. Para esto, consideramos tres metodos distintos. Estos son: PCA, tSNE y UMAP. La idea, es reducirnos a dimensiones facilmente interpretable como 2 y 3-dimensiones.
+
 **Tabla 4.** *Reductores de dimensionalidad*
 
 |       Notación    |   Método               | Libreria |
@@ -69,3 +74,5 @@ Luego de representar cada tweet como un vector con alguno de los metodos propues
 |      PCA          | [Principal component analysis](https://en.wikipedia.org/wiki/Principal_component_analysis)  |   [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)       |
 |      tSNE         | [t-Distributed Stochastic Neighbor Embedding](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding)  | [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html) |
 |      UMAP         | [Uniform Manifold Approximation and Projection](https://arxiv.org/abs/1802.03426) | [documentation](https://umap-learn.readthedocs.io/en/latest/) |
+
+Finalmente, este analisis nos dara un entendimento de la dificultad de predecir un emoji. Si los datos no se expresan en grupos diferenciados por el emoji. Es decir, que se solapan los grupos de datos para emojis distintos. Entonces, modelos lineales tenderan a obtener un desempeño deficiente. Por otro lado, con esta informacion podremos encontrar otro grupos (disintos a los indicados por el emoji) que pudiesen existir en el conjunto de datos. En cambio, si los datos logran expresarse para cierta representacion del texto junto a un metodo de clustering particular, responderemos afirmativamente la pregunta.
