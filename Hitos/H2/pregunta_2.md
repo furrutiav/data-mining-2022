@@ -42,13 +42,6 @@ Algoritmos de clustering:
 | OPTICS            | [Ordering points to identify the clustering structure](https://en.wikipedia.org/wiki/OPTICS_algorithm)      | [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.OPTICS.html#sklearn.cluster.OPTICS) |
 | GM  | [Gaussian Mixture](https://en.wikipedia.org/wiki/Mixture_model#Gaussian_mixture_model)  | [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html#sklearn.mixture.GaussianMixture) |
 
-Funciones de distancia:
-
-|       Notación    |   Método      |  Libreria |
-|-------------------|---------------|-----------|
-
-
-
 
 Métricas de evaluación para clustering:
 
@@ -62,4 +55,6 @@ Métricas de evaluación para clustering:
 |                   | Entropy 
 
 
+**Figura 1.** *Diagrama de trabajo para analisis de clustering*
 
+<img src="https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H2/p2_clustering.png" alt="drawing" width="600"/>
