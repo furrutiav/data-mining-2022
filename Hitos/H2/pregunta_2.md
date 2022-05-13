@@ -52,7 +52,7 @@ Luego de representar cada tweet como un vector con alguno de los metodos propues
 | OPTICS            | [Ordering points to identify the clustering structure](https://en.wikipedia.org/wiki/OPTICS_algorithm)      |  | [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.OPTICS.html#sklearn.cluster.OPTICS) |
 | GM  | [Gaussian Mixture](https://en.wikipedia.org/wiki/Mixture_model#Gaussian_mixture_model)  | ✔️ |[sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html#sklearn.mixture.GaussianMixture) |
 
-Para evaluar cuantitativamente el clustering, consideramos siete metricas. Algunas de estas son independientes del metodo, mientras que otras no son validas para ciertos metodos de clustering. Ver **Tabla 3.** para mas detalle. (pendiente)
+Para evaluar cuantitativamente el clustering, consideramos siete metricas. Como se tienen las etiquetas correctas de los puntos, entonces podemos considerar metricas similares a Accuracy, Preccion, Recall y F1-score, para evaluar los clusters. Estas metricas son: Rand index, Mutual Information, Homogeneity, Completeness y V-measure. Por otro lado, consideramos dos metricas adicionales que no requieren etiquetas correctas: Matriz de correlacion y Silhouette. Ver **Tabla 3.** para mas detalle.
 
 **Tabla 3.** *Métricas de evaluación para clustering. El simbolo 🔒 indica que es necesaria dicha informacion para calcular la metrica*
 
