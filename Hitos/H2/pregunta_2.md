@@ -54,16 +54,18 @@ Luego de representar cada tweet como un vector con alguno de los metodos propues
 
 Para evaluar cuantitativamente el clustering, consideramos siete metricas. Algunas de estas son independientes del metodo, mientras que otras no son validas para ciertos metodos de clustering. Ver **Tabla 3.** para mas detalle. (pendiente)
 
-**Tabla 3.** *Métricas de evaluación para clustering*
+**Tabla 3.** *Métricas de evaluación para clustering. El simbolo 🔒 indica que es necesaria dicha informacion para calcular la metrica*
 
-|       Notación    |   Método      | kMeans | Agg | DBSCAN | OPTICS | GM |  Libreria |
-|-------------------|---------------|--------|-----|--------|--------|----|-----------|
-|      Corr         | Correlación (Pearson)  |   X    |  X  |   X    |   X    | X  |           |
-|      WSS          |                        |   X    |     |        |        |    |           |
-|      BSS          |                        |   X    |     |        |        |    |           |
-|                   | Silhouette             |   X    |     |        |        |    |           |
-|                   | Purity                 |   X    |     |        |        |    |           |
-|                   | Entropy                |   X    |     |        |        |    |           |
+|       Notación    |   Método               | Rango  | Ground truth (Etiquetas)    | kMeans | Agg | DBSCAN | OPTICS | GM |  Libreria |
+|-------------------|------------------------|--------|-----------------------------|--------|-----|--------|--------|----|-----------|
+|      Corr         | [Correlación (Pearson)](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)                        | [-1, 1]^n   |       ✔️       |   ✔️    |  ✔️  |   ✔️    |   ✔️    | ✔️  |     [🐼](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html)      |
+|      SC           | [Silhouette](https://en.wikipedia.org/wiki/Silhouette_(clustering))                                           | [-1, 1]   |       ✔️       |  ✔️     | ✔️   |    ✔️   |    ✔️   |✔️   |   [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.silhouette_score.html#sklearn.metrics.silhouette_score)        |
+|      Rand         | [Rand index](https://en.wikipedia.org/wiki/Rand_index)                                                        |  [0, 1]  |       🔒       |  ✔️     | ✔️   |    ✔️   |    ✔️   |✔️   |  [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.rand_score.html#sklearn.metrics.rand_score)        |
+| NMI               | [Mutual Information](https://en.wikipedia.org/wiki/Mutual_information#Normalized_variants)                          | [0, 1]   |       🔒       |  ✔️     | ✔️   |    ✔️   |    ✔️   |✔️   |  [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.normalized_mutual_info_score.html#sklearn.metrics.normalized_mutual_info_score)        |
+| Hom               | [Homogeneity](https://scikit-learn.org/stable/modules/clustering.html#homogeneity-completeness-and-v-measure) | [0, 1]   |       🔒       |  ✔️     | ✔️   |    ✔️   |    ✔️   |✔️   |  [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.homogeneity_score.html#sklearn.metrics.homogeneity_score)        |
+| Comp              | [Completeness](https://scikit-learn.org/stable/modules/clustering.html#homogeneity-completeness-and-v-measure)| [0, 1]   |       🔒       |  ✔️     | ✔️   |    ✔️   |    ✔️   |✔️   |  [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.completeness_score.html#sklearn.metrics.completeness_score)        |
+| V                 | [V-measure](https://scikit-learn.org/stable/modules/clustering.html#homogeneity-completeness-and-v-measure)   | [0, 1]   |       🔒       |  ✔️     | ✔️   |    ✔️   |    ✔️   |✔️   |  [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.v_measure_score.html#sklearn.metrics.v_measure_score)        |
+
 
 Ahora bien, para evaluar cualitativamente el clustering, se visualizaran los clusters obtenidos. Sin embargo, como los vectores viven en espacios de dimensiones mayores que dos, es necesario reducir la dimensionalidad de los vectores. Para esto, consideramos tres metodos distintos. Estos son: PCA, tSNE y UMAP. Ver **Tabla 4.** para mas detalle. La idea, es reducirnos a dimensiones interpretables como 2 y 3-dimensiones.
 
@@ -73,6 +75,6 @@ Ahora bien, para evaluar cualitativamente el clustering, se visualizaran los clu
 |-------------------|------------------------|----------|
 |      PCA          | [Principal component analysis](https://en.wikipedia.org/wiki/Principal_component_analysis)  |   [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)       |
 |      tSNE         | [t-Distributed Stochastic Neighbor Embedding](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding)  | [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html) |
-|      UMAP         | [Uniform Manifold Approximation and Projection](https://arxiv.org/abs/1802.03426) | [documentation](https://umap-learn.readthedocs.io/en/latest/) |
+|      UMAP         | [Uniform Manifold Approximation and Projection](https://arxiv.org/abs/1802.03426) | [📄](https://umap-learn.readthedocs.io/en/latest/) |
 
 Finalmente, este analisis nos dara un entendimento de la dificultad de predecir un emoji. Si los datos no se expresan en grupos diferenciados por el emoji, es decir, que se solapan los grupos de datos para emojis distintos. Entonces, modelos de clasificacion tenderan a obtener un desempeño deficiente. Por otro lado, con esta informacion podremos encontrar otro grupos (disintos a los indicados por el emoji) que pudiesen existir en el conjunto de datos. En cambio, si los datos logran expresarse para cierta representacion del texto junto a un metodo de clustering particular, responderemos afirmativamente la pregunta.
