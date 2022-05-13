@@ -20,7 +20,7 @@ Ahora bien, estamos interesados en explorar distintos algoritmos de clustering c
 Es decir, que sean capaces de traducir grupos diferenciados según el único emoji presente en el tweet tanto para inglés como para español. 
 Entre los algoritmos a explorar estan: k-means, aglomerativo, gaussian mixtures, dbscan y optics.
 
-## Propuesta metodológica 🚀
+## Propuesta metodológica
 
 En lo que sigue se detallara la propuesta metodológica ilustrada en la **Figura 1.**
 
@@ -52,7 +52,7 @@ Luego de representar cada tweet como un vector con alguno de los metodos propues
 | OPTICS            | [Ordering points to identify the clustering structure](https://en.wikipedia.org/wiki/OPTICS_algorithm)      |  | [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.OPTICS.html#sklearn.cluster.OPTICS) |
 | GM  | [Gaussian Mixture](https://en.wikipedia.org/wiki/Mixture_model#Gaussian_mixture_model)  | ✔️ |[sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html#sklearn.mixture.GaussianMixture) |
 
-Para evaluar cuantitativamente el clustering, consideramos siete metricas. Algunas de estas son independientes del metodo, mientras que otras no son validas para ciertos metodos de clustering. Ver **Tabla 3.** para mas detalle.
+Para evaluar cuantitativamente el clustering, consideramos siete metricas. Algunas de estas son independientes del metodo, mientras que otras no son validas para ciertos metodos de clustering. Ver **Tabla 3.** para mas detalle. (pendiente)
 
 **Tabla 3.** *Métricas de evaluación para clustering*
 
