@@ -2,7 +2,7 @@
 
 ## ¿Podemos utilizar representaciones vectoriales apropiadas de los tweets y encontrar modelos descriptivos de agrupamiento de datos como clustering capaces de relacionar más aquellos tweets asociados a un mismo emoji?
 
-## Resumen
+## Preámbulo
 El paradigma tradicional de representación vectorial de datos es a través de un diseño manual de atributos. 
 En Procesamiento del Lenguaje Natural (PLN) existen varias aproximaciones para representar vectorialmente el texto. 
 Métodos como Bag-of-word y tf-idf son formas rudimentarias de codificar la información del texto. 
@@ -20,7 +20,7 @@ Ahora bien, estamos interesados en explorar distintos algoritmos de clustering c
 Es decir, que sean capaces de traducir grupos diferenciados según el único emoji presente en el tweet tanto para inglés como para español. 
 Entre los algoritmos a explorar estan: k-means, aglomerativo, gaussian mixtures, dbscan y optics.
 
-## Propuesta metodológica
+## Propuesta metodológica 🚀
 
 En lo que sigue se detallara la propuesta metodológica ilustrada en la **Figura 1.**
 
@@ -32,25 +32,25 @@ Primero, nuestro conjunto de datos esta separado por idioma (Ingles y Español) 
 
 **Tabla 1.** *Representación del tweet*
 
-|       Notación    |   Método      |  EN     |   ES   | Libreria |
+|       Notación    |   Método      |  🇺🇸     |   🇪🇸    | Libreria |
 |-------------------|---------------|---------|--------|----------|
-|       BOW         | [bag-of-words](https://en.wikipedia.org/wiki/Bag-of-words_model)                                                            |  X    |   X   | [sklearn](https://scikit-learn.org/stable/modules/feature_extraction.html#the-bag-of-words-representation)|
-|       TFIDF       | [term-frecuency invert-document-frecuency](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)                                    |  X    |   X   | [sklearn](https://scikit-learn.org/stable/modules/feature_extraction.html#tfidf-term-weighting)           |
-| W2V               | [Word2vec](https://en.wikipedia.org/wiki/Word2vec)                                                                          | X     | X     | [gensim](https://radimrehurek.com/gensim/models/word2vec.html)                                            |
-|       BETO        | [BETO: Spanish BERT](https://github.com/dccuchile/beto)                                                                     |       |   X   | [huggingface](https://huggingface.co/dccuchile/bert-base-spanish-wwm-cased)                                |
-|       BERTweet    | [BERTweet: A pre-trained language model for English Tweets](https://aclanthology.org/2020.emnlp-demos.2/)                   |  X    |       | [huggingface](https://huggingface.co/vinai/bertweet-base)                                                  |
+|       BOW         | [bag-of-words](https://en.wikipedia.org/wiki/Bag-of-words_model)                                                            |  ✔️   |   ✔️   | [sklearn](https://scikit-learn.org/stable/modules/feature_extraction.html#the-bag-of-words-representation)|
+|       TFIDF       | [term-frecuency invert-document-frecuency](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)                                    |  ✔️    |   ✔️   | [sklearn](https://scikit-learn.org/stable/modules/feature_extraction.html#tfidf-term-weighting)           |
+| W2V               | [Word2vec](https://en.wikipedia.org/wiki/Word2vec)                                                                          | ✔️     | ✔️     | [gensim](https://radimrehurek.com/gensim/models/word2vec.html)                                            |
+|       BETO        | [BETO: Spanish BERT](https://github.com/dccuchile/beto)                                                                     |       |   ✔️   | [🤗](https://huggingface.co/dccuchile/bert-base-spanish-wwm-cased)                                |
+|       BERTweet    | [BERTweet: A pre-trained language model for English Tweets](https://aclanthology.org/2020.emnlp-demos.2/)                   |  ✔️    |       | [🤗](https://huggingface.co/vinai/bertweet-base)                                                  |
 
 Luego de representar cada tweet como un vector con alguno de los metodos propuestos, consideramos cinco algoritmos distintos para agrupar los datos en clusters. Estos son: k-means, Jerarquico aglomerativo, dbscan, optics y Mixturas Gaussianas. Ver **Tabla 2.** para mas detalle. Se indicaran tantos clusters como emojis, siempre que el metodo lo permita. La idea es encontrar el metodo mas apropiado para nuestra tarea principal (predecir el emoji). Es decir, aquel que mejor agrupe aquellos tweets asociados a un mismo emoji y, al mismo tiempo, distinguir aquellos tweets asociado a un emoji diferente. Para medir esto finalizamos con una evaluacion y visualizacion del clustering.
 
 **Tabla 2.** *Algoritmos de clustering*
 
-|       Notación    |   Método      |  Libreria |
-|-------------------|---------------|----------|
-| kMeans           | [k-means](https://en.wikipedia.org/wiki/K-means_clustering)           | [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans) |
-| Agg      | [Agglomerative Hierarchical](https://en.wikipedia.org/wiki/Hierarchical_clustering)      | [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html#sklearn.cluster.AgglomerativeClustering) |
-| DBSCAN            | [Density-based spatial clustering of applications with noise](https://en.wikipedia.org/wiki/DBSCAN)            | [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html#sklearn.cluster.DBSCAN) | [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html#sklearn.cluster.DBSCAN) |
-| OPTICS            | [Ordering points to identify the clustering structure](https://en.wikipedia.org/wiki/OPTICS_algorithm)      | [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.OPTICS.html#sklearn.cluster.OPTICS) |
-| GM  | [Gaussian Mixture](https://en.wikipedia.org/wiki/Mixture_model#Gaussian_mixture_model)  | [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html#sklearn.mixture.GaussianMixture) |
+|       Notación    |   Método      | param: #(clusters) |  Libreria |
+|-------------------|---------------|------|---------|
+| kMeans           | [k-means](https://en.wikipedia.org/wiki/K-means_clustering)           | ✔️ |[sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans) |
+| Agg      | [Agglomerative Hierarchical](https://en.wikipedia.org/wiki/Hierarchical_clustering)      | ✔️ |[sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html#sklearn.cluster.AgglomerativeClustering) |
+| DBSCAN            | [Density-based spatial clustering of applications with noise](https://en.wikipedia.org/wiki/DBSCAN)            | |[sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html#sklearn.cluster.DBSCAN) | 
+| OPTICS            | [Ordering points to identify the clustering structure](https://en.wikipedia.org/wiki/OPTICS_algorithm)      |  | [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.OPTICS.html#sklearn.cluster.OPTICS) |
+| GM  | [Gaussian Mixture](https://en.wikipedia.org/wiki/Mixture_model#Gaussian_mixture_model)  | ✔️ |[sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html#sklearn.mixture.GaussianMixture) |
 
 Para evaluar cuantitativamente el clustering, consideramos siete metricas. Algunas de estas son independientes del metodo, mientras que otras no son validas para ciertos metodos de clustering. Ver **Tabla 3.** para mas detalle.
 
@@ -65,7 +65,7 @@ Para evaluar cuantitativamente el clustering, consideramos siete metricas. Algun
 |                   | Purity                 |   X    |     |        |        |    |           |
 |                   | Entropy                |   X    |     |        |        |    |           |
 
-Ahora bien, para evaluar cualitativamente el clustering, se visualizaran los clusters obtenidos. Sin embargo, como los vectores viven en espacios de dimensiones mayores que dos, es necesario reducir la dimensionalidad de los vectores. Para esto, consideramos tres metodos distintos. Estos son: PCA, tSNE y UMAP. La idea, es reducirnos a dimensiones facilmente interpretable como 2 y 3-dimensiones.
+Ahora bien, para evaluar cualitativamente el clustering, se visualizaran los clusters obtenidos. Sin embargo, como los vectores viven en espacios de dimensiones mayores que dos, es necesario reducir la dimensionalidad de los vectores. Para esto, consideramos tres metodos distintos. Estos son: PCA, tSNE y UMAP. La idea, es reducirnos a dimensiones interpretables como 2 y 3-dimensiones.
 
 **Tabla 4.** *Reductores de dimensionalidad*
 
