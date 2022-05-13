@@ -65,7 +65,7 @@ Para evaluar cuantitativamente el clustering, consideramos siete metricas. Algun
 |                   | Purity                 |   X    |     |        |        |    |           |
 |                   | Entropy                |   X    |     |        |        |    |           |
 
-Ahora bien, para evaluar cualitativamente el clustering, se visualizaran los clusters obtenidos. Sin embargo, como los vectores viven en espacios de dimensiones mayores que dos, es necesario reducir la dimensionalidad de los vectores. Para esto, consideramos tres metodos distintos. Estos son: PCA, tSNE y UMAP. La idea, es reducirnos a dimensiones interpretables como 2 y 3-dimensiones.
+Ahora bien, para evaluar cualitativamente el clustering, se visualizaran los clusters obtenidos. Sin embargo, como los vectores viven en espacios de dimensiones mayores que dos, es necesario reducir la dimensionalidad de los vectores. Para esto, consideramos tres metodos distintos. Estos son: PCA, tSNE y UMAP. Ver **Tabla 4.** para mas detalle. La idea, es reducirnos a dimensiones interpretables como 2 y 3-dimensiones.
 
 **Tabla 4.** *Reductores de dimensionalidad*
 
