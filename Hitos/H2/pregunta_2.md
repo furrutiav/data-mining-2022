@@ -3,7 +3,7 @@
 ## ¿Podemos utilizar representaciones vectoriales apropiadas de los tweets y encontrar modelos descriptivos de agrupamiento de datos como clustering capaces de relacionar más aquellos tweets asociados a un mismo emoji?
 
 ## Preámbulo
-El paradigma tradicional de representación vectorial de datos es a través de un diseño manual de atributos. 
+El paradigma tradicional de representación vectorial de datos ha sido través de un diseño manual de atributos. 
 En Procesamiento del Lenguaje Natural (PLN) existen varias aproximaciones para representar vectorialmente el texto. 
 Métodos como Bag-of-word y tf-idf son formas rudimentarias de codificar la información del texto. 
 Mientras que el uso de word-embeddings como word2vec y modelos del lenguaje como BERT son formas más sofisticadas de hacer lo mismo. 
@@ -54,7 +54,7 @@ Luego de representar cada tweet como un vector con alguno de los metodos propues
 
 Para evaluar cuantitativamente el clustering, consideramos siete metricas. Como se tienen las etiquetas correctas de los puntos, entonces podemos considerar metricas similares a Accuracy, Preccion, Recall y F1-score, para evaluar los clusters. Estas metricas son: Rand index, Mutual Information, Homogeneity, Completeness y V-measure. Por otro lado, consideramos dos metricas adicionales que no requieren etiquetas correctas: Matriz de correlacion y Silhouette. Ver **Tabla 3.** para mas detalle.
 
-**Tabla 3.** *Métricas de evaluación para clustering. El simbolo 🔒 indica que es necesaria dicha informacion para calcular la metrica*
+**Tabla 3.** *Métricas de evaluación para clustering. El simbolo 🔒 indica que es necesaria dicha información para calcular la metrica*
 
 |       Notación    |   Método               | Rango  | Ground truth (Etiquetas)    | kMeans | Agg | DBSCAN | OPTICS | GM |  Libreria |
 |-------------------|------------------------|--------|-----------------------------|--------|-----|--------|--------|----|-----------|
@@ -77,4 +77,4 @@ Ahora bien, para evaluar cualitativamente el clustering, se visualizaran los clu
 |      tSNE         | [t-Distributed Stochastic Neighbor Embedding](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding)  | [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html) |
 |      UMAP         | [Uniform Manifold Approximation and Projection](https://arxiv.org/abs/1802.03426) | [📄](https://umap-learn.readthedocs.io/en/latest/) |
 
-Finalmente, este analisis nos dara un entendimento de la dificultad de predecir un emoji. Si los datos no se expresan en grupos diferenciados por el emoji, es decir, que se solapan los grupos de datos para emojis distintos. Entonces, modelos de clasificacion tenderan a obtener un desempeño deficiente. Por otro lado, con esta informacion podremos encontrar otro grupos (disintos a los indicados por el emoji) que pudiesen existir en el conjunto de datos. En cambio, si los datos logran expresarse para cierta representacion del texto junto a un metodo de clustering particular, responderemos afirmativamente la pregunta.
+Finalmente, este analisis nos dara un entendimento de la dificultad de predecir un emoji. Si los datos no se expresan en grupos diferenciados por el emoji, es decir, que se solapan los grupos de datos para emojis distintos. Entonces, modelos de clasificacion tenderan a obtener un desempeño deficiente. Por otro lado, con esta informacion podremos encontrar otro grupos (distintos a los indicados por el emoji) que pudiesen existir en el conjunto de datos. En cambio, si los datos logran expresarse para cierta representacion del texto junto a un metodo de clustering particular, responderemos afirmativamente la pregunta.
