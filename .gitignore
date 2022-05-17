@@ -7,3 +7,4 @@
 /Data/train/df_us_train.pickle
 *.ipynb_checkpoints
 *_old*
+cardiffnlp/
