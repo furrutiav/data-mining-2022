@@ -6,3 +6,4 @@
 /Data/train/df_es_train.pickle
 /Data/train/df_us_train.pickle
 *.ipynb_checkpoints
+*_old*
