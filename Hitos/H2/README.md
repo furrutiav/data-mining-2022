@@ -11,4 +11,4 @@
 - [ ] Filtrar palabras muy poco frecuentes
 - [ ] Ajustar parámetro alpha (?)
 
-Reunión viernes 13, 12pm.
+Reunión lunes 16, 10am.
