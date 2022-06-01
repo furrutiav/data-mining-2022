@@ -35,4 +35,4 @@ Para el resto de las librarias ejecutar
 ### Entregables
 **[Hito 1](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H1/Informe_Hito_01.html)**
 
-**[Hito 2](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H2/Informe_Hito_02.html)**
+**[Hito 2](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H2/Informe_Hito_2.html)**
