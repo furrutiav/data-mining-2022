@@ -13,7 +13,7 @@ Barbieri, F., Camacho-Collados, J., Ronzano, F., Espinosa Anke, L., Ballesteros,
 
 Para clasificador basado en transformers se necesita la librería _pytorch_. Los comandos de instalación dependen de cada computador y se pueden encontrar en [este link](https://pytorch.org/get-started/locally/).
 
-Para el resto de las librarias ejecutar
+Para el resto de las bibliotecas ejecutar
 
 ```pip install -r requirements.txt```
 
@@ -23,13 +23,17 @@ Para el resto de las librarias ejecutar
 
 **[Hito 2](https://github.com/furrutiav/data-mining-2022/tree/main/Hitos/H2)**
 
+**[Hito 3](https://github.com/furrutiav/data-mining-2022/tree/main/Hitos/H3)**
+
 
 ### Notebooks
 **[Exploración](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H1/00%20Exploracion.ipynb)**
 
 **[Clasificador con Naive Bayes](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H2/clasificador1_en.ipynb)**
 
-**[Clasificador con Transformers](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H2/clasificador2_en.ipynb)**
+**Clasificador con Transformers**:
+- [bertweet-base-En](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clasificador2_transformer_en_bertweet-base-emoji.ipynb)
+- [twitter-roberta-En](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clasificador2_transformer_en_twitter-roberta-base.ipynb)
 
 
 ### Entregables
