@@ -3,6 +3,8 @@ from transformers import AutoTokenizer
 import numpy as np
 import pickle
 import os
+import gc
+
 
 # folder_emb = "bertweet_base_emoji"
 folder_emb = "Hitos/H3/embeddings/bertweet_base_emoji"
@@ -19,10 +21,12 @@ task='emoji'
 MODEL = f"cardiffnlp/bertweet-base-{task}"
 folder = MODEL.replace('cardiffnlp','Hitos/H3/modelos')
 
-tokenizer = AutoTokenizer.from_pretrained(folder)
-model = AutoModelForSequenceClassification.from_pretrained(folder)
-# tokenizer = AutoTokenizer.from_pretrained(MODEL)
-# model = AutoModelForSequenceClassification.from_pretrained(MODEL)
+try:
+    tokenizer = AutoTokenizer.from_pretrained(folder)
+    model = AutoModelForSequenceClassification.from_pretrained(folder)
+except ValueError:
+    tokenizer = AutoTokenizer.from_pretrained(MODEL)
+    model = AutoModelForSequenceClassification.from_pretrained(MODEL)
 
 
 def sentence_clf_output(text):
@@ -59,25 +63,36 @@ def guardar(y_list,idx,conjunto):
         np.save(os.path.join(folder_emb,'vec_{}_{}_{}'.format(conjunto,emb_func.__name__,idx)), arr)
 
 
-if __name__=='__main__':
-
-    # path =  "../../../Data/train/df_us_train.pickle"
-    path = "Data/train/df_us_train.pickle"
-    df_us_train = pickle.load(open(path, "rb"))
-
+def embeddings_conjunto(df,save_rate,limit=None,name='train'):
+    # itera sobre un df dado. genera y guarda los embeddings
     y_clf_obj = []
-    length = len(df_us_train)
-    # save_rate = 5000
-    save_rate = 200
-
-    for i, texto in enumerate(df_us_train['text']):
-        idx = 0
+    idx = 0
+    length = len(df)
+    for i, texto in enumerate(df['text']):
         clf_obj = sentence_clf_output(texto)
         y_clf_obj.append(clf_obj)
         if i%(save_rate)==0 and i!=0:
-            guardar(y_clf_obj,idx,'train')
+            guardar(y_clf_obj,idx,name)
             idx += 1
+            del y_clf_obj
+            gc.collect()
             y_clf_obj = []
             print('archivo guardado: porcentaje = {}%'.format(100*(i)/length))
-        if i==1000:
+        if i==limit:
             break
+
+
+if __name__=='__main__':
+
+    # path = "Data/train/df_us_train.pickle"
+    # df_us_train = pickle.load(open(path, "rb"))
+    path = "Data/test/df_us_test.pickle"
+    df_us_test = pickle.load(open(path, "rb"))
+
+    # parametros de guardado de embeddings
+    save_rate = 1000
+    # save_rate = 200
+    # limit = 300  # solo para testeo
+
+    # embeddings_conjunto(df_us_train,save_rate=save_rate,limit=limit)
+    embeddings_conjunto(df_us_test,save_rate=save_rate,name='test')
