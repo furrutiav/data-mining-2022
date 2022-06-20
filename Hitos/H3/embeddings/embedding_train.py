@@ -55,44 +55,56 @@ def logits_embedding(clf_output):
 embedding_types = [logits_embedding, sum_embedding, first_tok_embedding]
 
 
-def guardar(y_list,idx,conjunto):
-    embedding_types = [logits_embedding, sum_embedding, first_tok_embedding]
+def guardar(y_dic,idx,conjunto):
+    # recibe un diccionario que mapea metodos de embedding con listas de array
+    for emb_func_name in y_dic.keys():
+        arr = np.concatenate(y_dic[emb_func_name], axis=0)
+        np.save(os.path.join(folder_emb,'vec_{}_{}_{}'.format(conjunto,emb_func_name,idx)), arr)
 
-    for emb_func in embedding_types:
-        arr = np.concatenate([emb_func(clf_obj) for clf_obj in y_list], axis=0)
-        np.save(os.path.join(folder_emb,'vec_{}_{}_{}'.format(conjunto,emb_func.__name__,idx)), arr)
 
-
-def embeddings_conjunto(df,save_rate,limit=None,name='train'):
+def embeddings_conjunto(df,save_rate,limit=None,name='train',embedding_types=[logits_embedding, sum_embedding, first_tok_embedding]):
     # itera sobre un df dado. genera y guarda los embeddings
-    y_clf_obj = []
+    y_clf_obj = {emb_func.__name__:[] for emb_func in embedding_types}
     idx = 0
     length = len(df)
     for i, texto in enumerate(df['text']):
         clf_obj = sentence_clf_output(texto)
-        y_clf_obj.append(clf_obj)
+
+        for emb_func in embedding_types:
+            arr = emb_func(clf_obj)
+            y_clf_obj[emb_func.__name__].append(arr)
+
+        del clf_obj
+        gc.collect()
+
         if i%(save_rate)==0 and i!=0:
             guardar(y_clf_obj,idx,name)
             idx += 1
+
             del y_clf_obj
             gc.collect()
-            y_clf_obj = []
+            y_clf_obj = {emb_func.__name__:[] for emb_func in embedding_types}
+
             print('archivo guardado: porcentaje = {}%'.format(100*(i)/length))
+        
         if i==limit:
             break
 
+process = 'train'  # 'test
+
 
 if __name__=='__main__':
-
-    # path = "Data/train/df_us_train.pickle"
-    # df_us_train = pickle.load(open(path, "rb"))
-    path = "Data/test/df_us_test.pickle"
-    df_us_test = pickle.load(open(path, "rb"))
-
     # parametros de guardado de embeddings
-    save_rate = 1000
+    save_rate = 2500
     # save_rate = 200
-    # limit = 300  # solo para testeo
+    limit = None
+    # limit = 5000  # solo para testeo
 
-    # embeddings_conjunto(df_us_train,save_rate=save_rate,limit=limit)
-    embeddings_conjunto(df_us_test,save_rate=save_rate,name='test')
+    if process=='test':
+        path = "Data/test/df_us_test.pickle"
+        df_us_test = pickle.load(open(path, "rb"))
+        embeddings_conjunto(df_us_test,save_rate=save_rate,name='test',limit=limit)
+    elif process=='train':
+        path = "Data/train/df_us_train.pickle"
+        df_us_train = pickle.load(open(path, "rb"))
+        embeddings_conjunto(df_us_train,save_rate=save_rate,limit=limit)
