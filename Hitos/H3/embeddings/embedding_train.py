@@ -4,7 +4,8 @@ import numpy as np
 import pickle
 import os
 
-folder_emb = "bertweet_base_emoji"
+# folder_emb = "bertweet_base_emoji"
+folder_emb = "Hitos/H3/embeddings/bertweet_base_emoji"
 
 def preprocess(text):
     new_text = []
@@ -16,12 +17,12 @@ def preprocess(text):
 
 task='emoji'
 MODEL = f"cardiffnlp/bertweet-base-{task}"
-folder = MODEL.replace('cardiffnlp','../modelos')
+folder = MODEL.replace('cardiffnlp','Hitos/H3/modelos')
 
-# tokenizer = AutoTokenizer.from_pretrained(folder)
-# model = AutoModelForSequenceClassification.from_pretrained(folder)
-tokenizer = AutoTokenizer.from_pretrained(MODEL)
-model = AutoModelForSequenceClassification.from_pretrained(MODEL)
+tokenizer = AutoTokenizer.from_pretrained(folder)
+model = AutoModelForSequenceClassification.from_pretrained(folder)
+# tokenizer = AutoTokenizer.from_pretrained(MODEL)
+# model = AutoModelForSequenceClassification.from_pretrained(MODEL)
 
 
 def sentence_clf_output(text):
@@ -29,10 +30,6 @@ def sentence_clf_output(text):
     text = preprocess(text)
     encoded_input = tokenizer(text, return_tensors='pt')
     output = model(**encoded_input, return_dict=True, output_hidden_states=True)
-    ###
-    """ArithmeticErrorscores = output[0][0].detach().numpy()
-    scores = softmax(scores)
-    return np.argmax(scores), scores"""
     return output
 
 
@@ -62,9 +59,10 @@ def guardar(y_list,idx,conjunto):
         np.save(os.path.join(folder_emb,'vec_{}_{}_{}'.format(conjunto,emb_func.__name__,idx)), arr)
 
 
-if __name__=='main':
+if __name__=='__main__':
 
-    path =  "../../../Data/train/df_us_train.pickle"
+    # path =  "../../../Data/train/df_us_train.pickle"
+    path = "Data/train/df_us_train.pickle"
     df_us_train = pickle.load(open(path, "rb"))
 
     y_clf_obj = []
