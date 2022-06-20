@@ -44,7 +44,7 @@ def first_tok_embedding(cfl_output):
 
 def sum_embedding(cfl_output):
     # retorna un numpy array correspondiente a la suma de los vectores contextualizados
-    return cfl_output['hidden_states'][-1][0].detach().numpy().sum(axis=0).reshape(1,768)
+    return cfl_output['hidden_states'][-1][0].detach().numpy().mean(axis=0).reshape(1,768)
 
 
 def logits_embedding(clf_output):
@@ -77,7 +77,7 @@ def embeddings_conjunto(df,save_rate,limit=None,name='train',embedding_types=[lo
         del clf_obj
         gc.collect()
 
-        if i%(save_rate)==0 and i!=0:
+        if ((i+1)%(save_rate)==0 and i!=0) or i==length-1:
             guardar(y_clf_obj,idx,name)
             idx += 1
 
@@ -85,12 +85,12 @@ def embeddings_conjunto(df,save_rate,limit=None,name='train',embedding_types=[lo
             gc.collect()
             y_clf_obj = {emb_func.__name__:[] for emb_func in embedding_types}
 
-            print('archivo guardado: porcentaje = {}%'.format(100*(i)/length))
+            print('archivo guardado: porcentaje = {}%'.format(100*(i+1)/length))
         
         if i==limit:
             break
 
-process = 'train'  # 'test
+process = 'test'  # 'test
 
 
 if __name__=='__main__':
