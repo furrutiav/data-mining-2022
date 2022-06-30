@@ -34,7 +34,9 @@ Para el resto de las bibliotecas ejecutar
 **Clasificador con Transformers**:
 - [bertweet-base-En](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clasificador2_transformer_en_bertweet-base-emoji.ipynb)
 - [twitter-roberta-En](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clasificador2_transformer_en_twitter-roberta-base.ipynb)
+- **[Visualizaciones](https://www.youtube.com/watch?v=dQw4w9WgXcQ)**
 
+**[Resumen clasificadores](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/resumen_clasificadores.ipynb)**
 
 ### Entregables
 **[Hito 1](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H1/Informe_Hito_01.html)**
