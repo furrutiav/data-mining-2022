@@ -26,8 +26,10 @@ def clustering_report(X, labels, clustering_method, params_clustering):
     ## Predict
     print("Predict...")
     clustering_clusters = None
-    if clustering_method.__name__ in "KMeans":
+    if clustering_method.__name__ in ["KMeans", "AgglomerativeClustering", "DBSCAN", "OPTICS"]:
         clustering_clusters = clustering.labels_
+    elif clustering_method.__name__ in ["GaussianMixture"]:
+        clustering_clusters = clustering.predict(X)        
     print("Predict (done)")
     
     # Metricas
