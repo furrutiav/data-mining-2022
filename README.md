@@ -29,16 +29,39 @@ Para el resto de las bibliotecas ejecutar
 ### Notebooks
 **[Exploración](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H1/00%20Exploracion.ipynb)**
 
-**[Clasificador con Naive Bayes](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H2/clasificador1_en.ipynb)**
+**Clasificador con Naive Bayes**
+- [Inglés](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H2/clasificador1_en.ipynb) (Hito 2)
+- [Español](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H2/clasificador1_es.ipynb) (Hito 3)
 
-**Clasificador con Transformers**:
-- [bertweet-base-En](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clasificador2_transformer_en_bertweet-base-emoji.ipynb)
-- [twitter-roberta-En](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clasificador2_transformer_en_twitter-roberta-base.ipynb)
+**Clasificador con Transformers** (Hito 3):
+- [bertweet-base-US](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clasificador2_transformer_en_bertweet-base-emoji.ipynb)
+- [twitter-roberta-US](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clasificador2_transformer_en_twitter-roberta-base.ipynb)
+- [beto-emoji-ES](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clasificador2_transformer_es_beto-emoji.ipynb)
 - **[Visualizaciones](https://www.youtube.com/watch?v=dQw4w9WgXcQ)**
 
 **[Resumen clasificadores](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/resumen_clasificadores.ipynb)**
 
-### Entregables
-**[Hito 1](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H1/Informe_Hito_01.html)**
+**Clustering** (Hito 3)
+- word2vec: [Inglés](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clusterings_usando_word2vec_US.ipynb) - [Español](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clusterings_usando_word2vec_ES.ipynb)
+- Tf-idf: [Inglés](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clusterings_usando_tfidf_US.ipynb) - [Español](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clusterings_usando_tfidf_ES.ipynb)
+- Bag-of-words: [Inglés](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clusterings_usando_bow_US.ipynb) - [Español](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clusterings_usando_bow_ES.ipynb)
+- Transformers: [bertweet-base-US](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clusterings_usando_bertweet_US.ipynb) - twitter-roberta-US - beto-emoji
 
-**[Hito 2](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H2/Informe_Hito_2.html)**
+**[Análisis con regresiones lineales](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clasificador_regresion_lineal_es_y_en.ipynb)**
+
+**[Clasificadores version Hashtags](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/Pregunta%205.ipynb)**
+
+### Entregables
+**Hito 1**
+- Presentación Canva
+- [Video](https://youtu.be/SBHs3-6_1e4)
+- [Informe](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H1/Informe_Hito_01.html)
+
+**Hito 2**
+- [Presentación Canva](https://www.canva.com/design/DAFBEjJSz5g/62VH6P3E8P8pf1vykmwzZw/edit?utm_content=DAFBEjJSz5g&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+- [Informe](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H2/Informe_Hito_2.html)
+
+**Hito 3**
+- [Presentación Canva](https://www.canva.com/design/DAFFXuGf4Kw/wjV2-w8wCGSH7ZMDh8BGYA/edit?utm_content=DAFFXuGf4Kw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+- Video
+- Informe
