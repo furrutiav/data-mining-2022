@@ -12,6 +12,7 @@ entrega_hito_2_grupo_1*
 modelos/
 bertweet_base_emoji/
 twitter_roberta_base_emoji/
+beto_emoji/
 __pycache__
 mprof*
 *.zip

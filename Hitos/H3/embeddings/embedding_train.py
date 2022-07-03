@@ -7,7 +7,9 @@ import gc
 
 
 # folder_emb = "bertweet_base_emoji"
-folder_emb = "Hitos/H3/embeddings/bertweet_base_emoji"
+folder_emb = "Hitos/H3/embeddings/beto_emoji"
+
+n_labels = 19  # n_labels = 20
 
 def preprocess(text):
     new_text = []
@@ -18,8 +20,9 @@ def preprocess(text):
     return " ".join(new_text)
 
 task='emoji'
-MODEL = f"cardiffnlp/bertweet-base-{task}"
-folder = MODEL.replace('cardiffnlp','Hitos/H3/modelos')
+MODEL = f"ccarvajal/beto-{task}"
+folder = MODEL.replace('ccarvajal','Hitos/H3/modelos')
+# folder = MODEL.replace('cardiffnlp','Hitos/H3/modelos')
 
 try:
     tokenizer = AutoTokenizer.from_pretrained(folder)
@@ -49,7 +52,7 @@ def sum_embedding(cfl_output):
 
 def logits_embedding(clf_output):
     # retorna el vector de scores de clasificacion (antes de la capa softmax)
-    return clf_output['logits'][0].detach().numpy().reshape(1,20)
+    return clf_output['logits'][0].detach().numpy().reshape(1,n_labels)
 
 
 embedding_types = [logits_embedding, sum_embedding, first_tok_embedding]
@@ -90,8 +93,8 @@ def embeddings_conjunto(df,save_rate,limit=None,name='train',embedding_types=[lo
         if i==limit:
             break
 
-process = 'test'  # 'test
-
+process = 'train'  # 'test
+language = 'es'
 
 if __name__=='__main__':
     # parametros de guardado de embeddings
@@ -101,10 +104,10 @@ if __name__=='__main__':
     # limit = 5000  # solo para testeo
 
     if process=='test':
-        path = "Data/test/df_us_test.pickle"
-        df_us_test = pickle.load(open(path, "rb"))
-        embeddings_conjunto(df_us_test,save_rate=save_rate,name='test',limit=limit)
+        path = "Data/test/df_{}_test.pickle".format(language)
+        df_test = pickle.load(open(path, "rb"))
+        embeddings_conjunto(df_test,save_rate=save_rate,name='test',limit=limit)
     elif process=='train':
-        path = "Data/train/df_us_train.pickle"
-        df_us_train = pickle.load(open(path, "rb"))
-        embeddings_conjunto(df_us_train,save_rate=save_rate,limit=limit)
+        path = "Data/train/df_{}_train.pickle".format(language)
+        df_train = pickle.load(open(path, "rb"))
+        embeddings_conjunto(df_train,save_rate=save_rate,limit=limit)
