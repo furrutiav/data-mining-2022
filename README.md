@@ -31,7 +31,7 @@ Para el resto de las bibliotecas ejecutar
 
 **Clasificador con Naive Bayes**
 - [Inglés](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H2/clasificador1_en.ipynb) (Hito 2)
-- [Español](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H2/clasificador1_es.ipynb) (Hito 3)
+- [Español](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clasificador1_es.ipynb) (Hito 3)
 
 **Clasificador con Transformers** (Hito 3):
 - [bertweet-base-US](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clasificador2_transformer_en_bertweet-base-emoji.ipynb)
