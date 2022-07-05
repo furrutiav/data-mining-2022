@@ -47,6 +47,9 @@ Para el resto de las bibliotecas ejecutar
 - Bag-of-words: [Inglés](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clusterings_usando_bow_US.ipynb) - [Español](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clusterings_usando_bow_ES.ipynb)
 - Transformers: [bertweet-base-US](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clusterings_usando_bertweet_US.ipynb) - twitter-roberta-US - beto-emoji
 
+
+**[Resumen clustering](https://youtu.be/dQw4w9WgXcQ)**
+
 **[Análisis con regresiones lineales](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clasificador_regresion_lineal_es_y_en.ipynb)**
 
 **[Clasificadores version Hashtags](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/Pregunta%205.ipynb)**
