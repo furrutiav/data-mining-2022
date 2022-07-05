@@ -37,9 +37,9 @@ Para el resto de las bibliotecas ejecutar
 - [bertweet-base-US](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clasificador2_transformer_en_bertweet-base-emoji.ipynb)
 - [twitter-roberta-US](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clasificador2_transformer_en_twitter-roberta-base.ipynb)
 - [beto-emoji-ES](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clasificador2_transformer_es_beto-emoji.ipynb)
-- **[Visualizaciones](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clasificador2_transformer_es_beto-emoji.ipynb)**
+- **[Visualizaciones](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/visualizando_atencion.ipynb)**
 
-**[Resumen clasificadores](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/visualizando_atencion.ipynb)**
+**[Resumen clasificadores](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/resumen_clasificadores.ipynb)**
 
 **Clustering** (Hito 3)
 - word2vec: [Inglés](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clusterings_usando_word2vec_US.ipynb) - [Español](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clusterings_usando_word2vec_ES.ipynb)
