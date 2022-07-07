@@ -48,7 +48,7 @@ Para el resto de las bibliotecas ejecutar
 - Transformers: [bertweet-base-US](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clusterings_usando_bertweet_US.ipynb) - twitter-roberta-US - beto-emoji
 
 
-**[Resumen clustering](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/resumen_clustering.ipynb)**
+**[Resumen clustering](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/resumen_clustering.html)**
 
 **[Análisis con regresiones lineales](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clasificador_regresion_lineal_es_y_en.ipynb)**
 
