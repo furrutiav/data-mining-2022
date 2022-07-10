@@ -101,20 +101,20 @@ def umap_reducer(proba_matrix):
     to_R2 = reducer.fit_transform(proba_matrix)
     return to_R2
 
-def df_umap_clf(vectorizer,map_emojis,matrix):
+def df_umap_clf(vectorizer,map_emojis,matrix,labels_mapping=df_us_mapping):
     to_R2= umap_reducer(matrix)
     df = pd.DataFrame(to_R2)
     df["token"] = vectorizer.get_feature_names_out()
     df["label"] = map_emojis[np.argmax(matrix, axis=1).astype(int)]
     df["proba"] = np.max(matrix, axis=1)
-    df = df.merge(df_us_mapping, on="label", how="left")
+    df = df.merge(labels_mapping, on="label", how="left")
     return df
 
-def fig_umap(clf,vectorizer,vocab_length):
+def fig_umap(clf,vectorizer,vocab_length,labels_mapping=df_us_mapping):
     matrix = proba_matrix(clf,vocab_length)
     data = []
-    for label in df_us_mapping["label"]:
-        df_umap = df_umap_clf(vectorizer,df_us_mapping["label"].values,matrix)
+    for label in labels_mapping["label"]:
+        df_umap = df_umap_clf(vectorizer,labels_mapping["label"].values,matrix,labels_mapping=labels_mapping)
         sub_df = df_umap[df_umap["label"] == label]
         data.append(
             go.Scattergl(
