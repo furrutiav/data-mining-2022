@@ -10,6 +10,8 @@ import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import classification_report
+import umap.umap_ as umap
+import plotly.graph_objects as go
 
 
 sns.set_theme(style="whitegrid")
@@ -86,3 +88,53 @@ def rank_emojis_text(text,model,tokenizer,labels):
         l = labels[ranking[i]]
         s = scores[ranking[i]]
         print(f"{i+1}) {l} {np.round(float(s), 4)}")
+
+
+# plot naive bayes
+def proba_matrix(clf,vocab_length):  # X_train_bow.shape[1]
+    proba_matrix = np.array([clf.predict_proba(np.eye(1,vocab_length,k))[0] for k in range(vocab_length)])
+    return proba_matrix
+
+# to_R2
+def umap_reducer(proba_matrix):
+    reducer = umap.UMAP(n_neighbors=15)
+    to_R2 = reducer.fit_transform(proba_matrix)
+    return to_R2
+
+def df_umap_clf(vectorizer,map_emojis,matrix):
+    to_R2= umap_reducer(matrix)
+    df = pd.DataFrame(to_R2)
+    df["token"] = vectorizer.get_feature_names_out()
+    df["label"] = map_emojis[np.argmax(matrix, axis=1).astype(int)]
+    df["proba"] = np.max(matrix, axis=1)
+    df = df.merge(df_us_mapping, on="label", how="left")
+    return df
+
+def fig_umap(clf,vectorizer,vocab_length):
+    matrix = proba_matrix(clf,vocab_length)
+    data = []
+    for label in df_us_mapping["label"]:
+        df_umap = df_umap_clf(vectorizer,df_us_mapping["label"].values,matrix)
+        sub_df = df_umap[df_umap["label"] == label]
+        data.append(
+            go.Scattergl(
+                x = sub_df[0],
+                y = sub_df[1],
+                mode='markers',
+                text=sub_df["token"]+"<br>"+sub_df["emoji"]+"<br>"+sub_df["proba"].apply(lambda x: str(np.round(x, 3))),
+                name=sub_df["emoji"].iloc[0],
+                marker=dict(
+                    size=25*sub_df["proba"],
+                    line_width=0.2,
+                )
+            )
+        )
+        
+    fig = go.Figure(data=data)
+    fig.update_layout(
+        title="Proyección (UMAP) de vectores de probabilidad de tokens",
+        autosize=False,
+        width=700,
+        height=500,
+    )
+    return fig
