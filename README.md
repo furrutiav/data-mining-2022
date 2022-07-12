@@ -42,11 +42,10 @@ Para el resto de las bibliotecas ejecutar
 **[Resumen clasificadores](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/resumen_clasificadores.ipynb)**
 
 **Clustering** (Hito 3)
-- word2vec: [Inglés](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clusterings_usando_word2vec_US.ipynb) - [Español](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clusterings_usando_word2vec_ES.ipynb)
-- Tf-idf: [Inglés](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clusterings_usando_tfidf_US.ipynb) - [Español](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clusterings_usando_tfidf_ES.ipynb)
-- Bag-of-words: [Inglés](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clusterings_usando_bow_US.ipynb) - [Español](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clusterings_usando_bow_ES.ipynb)
-- Transformers: [bertweet-base-US](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/clusterings_usando_bertweet_US.ipynb) - twitter-roberta-US - beto-emoji
-
+- word2vec: [Inglés](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/notebooks_clustering/clusterings_usando_word2vec_US.html) - [Español](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/notebooks_clustering/clusterings_usando_word2vec_ES.html)
+- Tf-idf: [Inglés](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/notebooks_clustering/clusterings_usando_tfidf_US.html) - [Español](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/notebooks_clustering/clusterings_usando_tfidf_ES.html)
+- Bag-of-words: [Inglés](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/notebooks_clustering/clusterings_usando_bow_US.html) - [Español](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/notebooks_clustering/clusterings_usando_bow_ES.html)
+- Transformers: [bertweet-base-US](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/notebooks_clustering/clusterings_usando_bertweet_US.html) - [beto](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/notebooks_clustering/clusterings_usando_beto_ES.html)
 
 **[Resumen clustering](https://github.com/furrutiav/data-mining-2022/blob/main/Hitos/H3/resumen_clustering.html)**
 
@@ -66,5 +65,5 @@ Para el resto de las bibliotecas ejecutar
 
 **Hito 3**
 - [Presentación Canva](https://www.canva.com/design/DAFFXuGf4Kw/wjV2-w8wCGSH7ZMDh8BGYA/edit?utm_content=DAFFXuGf4Kw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
-- Video
-- Informe
+- [Video](www.youtube.com/watch?v=K2jODgKQ8uo)
+- Informe: [Notebook](https://drive.google.com/file/d/1lE5TyN_D1jljubbtaQ5MkJ9QNwQUNktw/view?usp=sharing) - [html](https://drive.google.com/file/d/1iU1ZnuMGPXsaK0m172zFD7fG87MfHMcZ/view?usp=sharing)
